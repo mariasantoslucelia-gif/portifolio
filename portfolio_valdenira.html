@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valdenira de castro oliveira | Portfólio Minimalista</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --accent: #f0fdf4; /* Verde ultra suave */
+            --text-primary: #064e3b; /* Verde escuro */
+            --text-secondary: #065f46; /* Verde médio-escuro */
+            --border: #d1fae5; /* Verde claro para bordas */
+            --soft-green: #34d399; /* Verde médio */
+            --gradient-start: #064e3b; /* Verde escuro */
+            --gradient-end: #6ee7b7; /* Verde claro */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header */
+        header {
+            padding: 3rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-left: 2rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--gradient-start);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0 6rem;
+            text-align: left;
+        }
+
+        .profile-wrapper {
+            margin-bottom: 2.5rem;
+        }
+
+        .foto-circular {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            padding: 5px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            font-weight: 300;
+        }
+
+        .hero strong {
+            color: var(--gradient-start);
+            font-weight: 500;
+        }
+
+        /* Projects Section */
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: var(--border);
+        }
+
+        .projects-list {
+            display: grid;
+            gap: 4rem;
+            margin-bottom: 8rem;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-item h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--gradient-start);
+        }
+
+        .project-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 500px;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            width: fit-content;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border-color: transparent;
+        }
+
+        /* Footer */
+        footer {
+            padding: 6rem 0 4rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .contact-info h4 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--gradient-start);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .contact-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover {
+            color: var(--soft-green);
+        }
+
+        .copyright {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            header { padding: 2rem 0; }
+            .hero { padding: 2rem 0 4rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">VO.</div>
+            <nav>
+                <a href="#sobre">Sobre</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="sobre" class="hero">
+                <div class="profile-wrapper">
+                    <img src="WhatsApp Image 2026-04-14 at 11.07.21.jpeg" alt="Valdenira de castro oliveira" class="foto-circular">
+                </div>
+                <h1>Olá, eu sou Valdenira de castro oliveira.</h1>
+                <p>Estudante de <strong>Sistemas para Internet</strong>. Focada em criar experiências digitais simples e funcionais através da programação web.</p>
+            </section>
+
+            <section id="projetos">
+                <div class="section-title">Projetos Selecionados</div>
+                <div id="projetos-container" class="projects-list">
+                    <!-- Projetos via JS -->
+                </div>
+            </section>
+        </main>
+
+        <footer id="contato">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h4>Vamos conversar?</h4>
+                    <div class="contact-links">
+                        <a href="mailto:valdenira@exemplo.com">v71903342@gmail.com.com</a>
+                        <a href="#" target="_blank">https://github.com/v71903342</a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© 2026 Valdenira de castro oliveira</p>
+                    <p>Milton Brandão, Piauí</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const projetos = [
+            {
+                titulo: "Lista de Tarefas",
+                descricao: "Uma abordagem minimalista para organização diária, construída com JavaScript puro.",
+                link: "#"
+            },
+            {
+                titulo: "Portfólio MVP",
+                descricao: "Exploração de design e estrutura para a disciplina de Programação Web.",
+                link: "#"
+            }
+        ];
+
+        function renderizarProjetos() {
+            const container = document.getElementById('projetos-container');
+            container.innerHTML = '';
+
+            projetos.forEach(projeto => {
+                const item = document.createElement('div');
+                item.className = 'project-item';
+                
+                item.innerHTML = `
+                    <h3>${projeto.titulo}</h3>
+                    <p>${projeto.descricao}</p>
+                    <a href="${projeto.link}" class="project-link" target="_blank">Ver detalhes ↗</a>
+                `;
+                
+                container.appendChild(item);
+            });
+        }
+
+        window.onload = renderizarProjetos;
+    </script>
+</body>
+</html>
